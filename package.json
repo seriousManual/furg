@@ -1,0 +1,30 @@
+{
+  "name": "furg",
+  "version": "0.0.1",
+  "description": "basic dependency injection framework",
+  "main": "furg.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/zaphod1984/furg.git"
+  },
+  "keywords": [
+    "dependency",
+    "injection",
+    "injector",
+    "di"
+  ],
+  "author": "Manuel Ernst <zaphod84@gmx.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zaphod1984/furg/issues"
+  },
+  "devDependencies": {
+    "sinon-chai": "^2.5.0",
+    "sinon": "^1.10.3",
+    "chai": "^1.9.1",
+    "mocha": "^1.21.4"
+  }
+}
