@@ -5,6 +5,8 @@ basic depenency injection framework
 ## usage
 
 ````javascript
+var Injector = require('furg');
+
 function Foo (bar) {
     this._bar = bar;
 }
