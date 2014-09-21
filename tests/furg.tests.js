@@ -155,4 +155,27 @@ describe('di', function () {
             expect(created.get()).to.deep.equal({foo: 'bar'});
         });
     });
+
+    describe('equip of anonymous function', function () {
+        var i, created;
+
+        before(function () {
+            i = new Injector();
+            i.register('foo', Foo);
+            i.register('bar', Bar);
+            i.register('a', {foo: 'bar'});
+
+            created = i.equip(function(foo, bar, a) {
+                this._foo = foo;
+                this._bar = bar;
+                this._a = a;
+            });
+        });
+
+        it('should be equipped', function () {
+            expect(created._foo).to.be.instanceOf(Foo);
+            expect(created._bar).to.be.instanceOf(Bar);
+            expect(created._a).to.deep.equal({foo: 'bar'});
+        });
+    });
 });

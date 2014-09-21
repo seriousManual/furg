@@ -1,4 +1,4 @@
-var PATTERN = /function ([^\(]+) *\(([^\)]+)\)/;
+var PATTERN = /function ([^\(]*) *\(([^\)]+)\)/;
 
 function Injector() {
     this._pool = {};
