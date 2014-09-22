@@ -29,6 +29,7 @@ i.register('a', {foo: 'bar'});
 //create objects
 var created = i.create('foo');
 
+assert(created instanceof Foo);
 assert(created._bar instanceof Bar);
 assert(created._bar._a.foo === 'bar');
 
