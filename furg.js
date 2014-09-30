@@ -1,3 +1,5 @@
+var Factory = require('./Factory');
+
 var PATTERN = /function ([^\(]*) *\(([^\)]+)\)/;
 
 function Injector() {
@@ -18,7 +20,13 @@ Injector.prototype.equip = function (Entity, depth) {
             return that.create(dependencyName, ++depth);
         });
 
-    return this._createEntity(Entity, dependencies);
+    var entity = this._createEntity(Entity, dependencies);
+
+    if (this._isFactory(entity)) {
+        return entity.create();
+    } else {
+        return entity;
+    }
 };
 
 Injector.prototype.create = function (name, depth) {
@@ -64,10 +72,16 @@ Injector.prototype._isFunction = function (entity) {
     return typeof entity === 'function';
 };
 
+Injector.prototype._isFactory = function(entity) {
+    return entity instanceof Factory;
+};
+
 Injector.prototype.retrieve = function (name) {
     if (this._pool[name] !== undefined) return this._pool[name];
 
     throw new Error('unmet dependency: ' + name);
 };
+
+Injector.Factory = Factory;
 
 module.exports = Injector;

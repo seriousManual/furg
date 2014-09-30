@@ -43,7 +43,33 @@ var created2 = i.equip(function(foo, bar, a) {
 assert(created2._foo instanceof Foo);
 assert(created2._bar instanceof Bar);
 assert(created2._a.foo === 'bar');
+
+function MyFactory(foo, bar) {
+    Injector.Factory.call(this);
+
+    this._foo = foo;
+    this._bar = bar;
+}
+
+util.inherits(MyFactory, Injector.Factory);
+
+MyFactory.prototype.create = function() {
+    return {
+        asdfasdf: this._foo,
+        jkloejkloe: this._bar
+    };
+};
+
+i.register('fff', MyFactory);
+
+//create via factory
+var created3 = i.create('fff');
+
+assert(created3.asdfasdf instanceof Foo);
+assert(created3.jkloejkloe instanceof Bar);
+assert(created3.jkloejkloe._a.foo === 'bar');
 ````
+
 
 ## furg?
 A furg is a hairy creature that likes to bang its head into the ground and fling its excrements about.
