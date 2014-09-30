@@ -1,6 +1,6 @@
 {
   "name": "furg",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "basic dependency injection framework",
   "main": "furg.js",
   "scripts": {
