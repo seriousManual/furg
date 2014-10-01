@@ -1,5 +1,9 @@
 # furg  [![Build Status](https://travis-ci.org/zaphod1984/furg.png)](https://travis-ci.org/zaphod1984/furg)
 
+[![NPM](https://nodei.co/npm/furg.png)](https://nodei.co/npm/furg/)
+
+[![NPM](https://nodei.co/npm-dl/furg.png?months=3)](https://nodei.co/npm/furg/)
+
 basic depenency injection framework
 
 ## usage
