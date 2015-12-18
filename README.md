@@ -1,4 +1,4 @@
-# furg  [![Build Status](https://travis-ci.org/zaphod1984/furg.png)](https://travis-ci.org/zaphod1984/furg)
+# furg  [![Build Status](https://travis-ci.org/seriousManual/furg.png)](https://travis-ci.org/seriousManual/furg)
 
 [![NPM](https://nodei.co/npm/furg.png)](https://nodei.co/npm/furg/)
 
